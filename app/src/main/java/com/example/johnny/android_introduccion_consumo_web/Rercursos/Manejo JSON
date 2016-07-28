@@ -1,0 +1,36 @@
+now you have your JSON, so what?
+
+Create a JSONObject:
+
+JSONObject jObject = new JSONObject(result);
+To get a specific string
+
+String aJsonString = jObject.getString("STRINGNAME");
+To get a specific boolean
+
+boolean aJsonBoolean = jObject.getBoolean("BOOLEANNAME");
+To get a specific integer
+
+int aJsonInteger = jObject.getInt("INTEGERNAME");
+To get a specific long
+
+long aJsonLong = jObject.getBoolean("LONGNAME");
+To get a specific double
+
+double aJsonDouble = jObject.getDouble("DOUBLENAME");
+To get a specific JSONArray:
+
+JSONArray jArray = jObject.getJSONArray("ARRAYNAME");
+To get the items from the array
+
+for (int i=0; i < jArray.length(); i++)
+{
+    try {
+        JSONObject oneObject = jArray.getJSONObject(i);
+        // Pulling items from the array
+        String oneObjectsItem = oneObject.getString("STRINGNAMEinTHEarray");
+        String oneObjectsItem2 = oneObject.getString("anotherSTRINGNAMEINtheARRAY");
+    } catch (JSONException e) {
+        // Oops
+    }
+}
